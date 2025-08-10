@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMCEM Lucknow Quiz Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="login-container">
+            <div class="header">
+                <h1>SRMCEM LUCKNOW</h1>
+                <h2>QUIZ PORTAL</h2>
+                <div class="logo-placeholder"><img id="clglogo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUUExMWFhUXGSAbGRgYGCAgHxYgHR0gHR8dICAbHSkgHyAlIB8dITEhJSkrLi4vHh8zODMvOCgtLysBCgoKDg0OGxAQGy0mICUuLi0tMjIvNy0vMi4tKzUvLTIvMDAxLS0xMTY1LTItLS4tLS0tLy0vLjUwLS01NS0rLf/AABEIAOEA4AMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAAABQMEBgIHAQj/xABOEAACAQIEBAMFAwUNBgQHAAABAgMEEQAFEiEGEyIxQVFhFCMycYFCUpEHM2KCoRUkQ1Nyc5KTorHB0dKDo7KzwvAXNETTFjVUY3SUpP/EABoBAQACAwEAAAAAAAAAAAAAAAACAwEEBQb/xAA0EQACAQICBwcDBAIDAAAAAAAAAQIDEQQhBRIxQVFh8BNxgZGh0eEyscEiQlLxFBUGU2L/2gAMAwEAAhEDEQA/APccGDBgAwYMGADBgwYAMGDC/Nc5hp9PMbqbZI1BZ5D+iigsfU2sO5sMAMMcyyBQWYgAdyTYD6nGcasrZ/hRaOM+L2kmP6qnlRn1LSeqjEEuQ0qAy1N5uWNZkqm1hNIuXCt7uO3foVRgC8eL6VjaEyVHrTxtIvy5ijlg/NhiJs7rH/NUOn/8mdU+toRKfobYXUvG1HJHMyM45MJmKNGyM0QBOtA4GpTa1x6eYxXyfiWpMtOtZTxwpVi8LRyF9LadfLkuoAYrcgja4IwA4ebMWGzUcZ/kSS/9UeOVhzHxrKf6Ujf41BwkgzmokyaectaojjqOpQBZ4WkUEC1vsjbEvGOaumVidJWiLci8i91DyRhiNj9knwwA1MeZDtV0x9GpH/6akY7NVmKj4aOU/wAqSK/9mTGWjzk+zxx0Vc9TJUVIgWeVVJgsmtzp0KGKoLgEd2F9sWJszqqOmrnedKlYlU08p0ai7dOiRY7DZ9Njte58sAaRM/nW3OoZR5tC6SqPxZJD9ExPScVUkjBOby5G2EcytE7W+6soUt81vinkLVvX7X7Me2hqcv1d76g97W27E33xTzbiegEhpZ2Vtwrho2aNS/wq7aSik37MfHAGywYy68PrFvSyyUxHZUOqLbw5T3QD+QFPriVM6qYP/NQcxB/DUwLW23LQm8i/JDL9MAaPBivQV0c6CSJ1kQ9mU3H7PEeXhixgAwYMGADBgwYAMGDBgAwYMGADBgwYAMRzzKil3YKqi7MxACgdySdgPXFbNczjp01yE7nSqqLtIx7IijdmNjsPInsCcI46GSpYS1gFgQ0dNcFIrdmkI2kl8fup9m5GsgdyZpPV7U14YPGoZet/5lGFgP8A7kgt5KwIYV61qbLIZKlkdj0h3sZJZSzBVBYnUeprAXCi9gAMK8341lSSpENIZYqOxqWaQIwFtR5aHdrJdrnSDbbzxQquYIKvLndmZoXnopXJLSKOsIzNcmSJ9PfcqVPgcAPq/iLS1FNGyPR1DctnAN1Zx7pr+ClgUIIFiw+WL/FGXtUUdTCnxSQuq/MqQP248/oKGrqonYUqpQ5gAeUkoZ6d2GpatRsqqWCsUBJB3te4O04ejr1Bkr54LBAOXEtlUju7SMbknxFgovgBUueUtVR0yMt5KxDSlVA1wkowkDA2YKhU3/V88LonqZ0oKOSmmWopaiJpZSh5WiC4LrL2bmLsFG92II2w2izig57S0dKaqobZpKaAG9++qc6Yx69eGKnNZfhgpaYH+NlaVx81iCrf9c/XACigy2uj9qpuRF7NNNOwlabqCzFjYIFPYnxOIP3DzR6JKaT2K8Qg5ZDy9RgdG6zo2BCfZHfGiHDtc35zM2X0hpolH+85h/bj6eDpD3zSvv6NCP2CDACvMsvzCZIZmWmFVTT8xER35cqFCjKWZQVYhmsbECw88Z+r4dqRDUMaBAKirgkkpoXjb3UQDPcnQrF3Xcfp42g4RlHw5pXX/S5DD8DBjlsjzJPzeYRyek9Ku/1hdLfhgA4Tp4Y6cmno3pQzsxhdQrahZb2DEWOkWse2MLE6PkccCMr1OYyWYDdjLLLqlZgNxy1BuT20i+Nu1bmUP56hjmXxalmu3z5cyp+Ac/XFDK63LDUMURKWskBB5sPJmJPcrzFAY+N1vfxvgBJ7QtbmM3v6ynIbk0kkIYRvytZludJjYl9Qsw7IN98bDiLiKOj5QaOWVpWICRLqfSq6nfTsSqi17feGLmS5YlLBHBHfTGoUE928Sx9Sbk+pOMNRymszKeVKw01TA3Jip5EHVAtmdmSQAnmNdgyHYBb4A09LTQVSiso5WieT+GiFuZY2tIjDS9iCvWNQ3AK4v0fEDRssVaqxOxsky/mZiTYAE7xudvdv52VnsTjz6r4iL5hFWPK8dFDFPIqA25sakRiQgfFzpWGgHwjU/axtabM0aniXMPZ4ZKhd4HdbHV2Sz/EbWBFu98AazBjKxSy0J+3NR+W7SUvy+1JF6bun6S/BpqedZFV0YMjAMrKbhgdwQRsQR44AkwYMGADBgwYAMGDBgAxRzjNEpo9b3JJCoii7SueyKPFj9AACSQASJ62rSGNpJGCogLMx7ADvjO0as7msqvd2UiKNyAKeM9yxO3MfYsfsiyjsxYDlFEWqtrpEVwLbt7umQkdCE2uSban7ubdgFUJ855lRmIpjVzU0fs4lg5BA5z6iHJYqQ+kaDo8Qb4XcUcQcySpoa6kdacrqjmj94wUWtNotdgrbnRfTsGFjcpsgi50UcV2lhjlCrJTNeTL5T8MkRFy1NICCAb6LlT8OwFjOqGaZpBUoZKqkCmdISUGZ0hJIOlSOtSD0dtQI+0Lamh4TQFfeMKaN1nplOpZKZt9aam35TA2MbDa7Dwx1DRrQNJWVtW88jIsKsyKvSCSscccY6nZjfa5Jt2xxUUMlShnzFZI6cEGOhjuzSbgKZ9G7kkj3Q6BtqJ3sMpNuyJKTOGlUQ5VAjxp0idummjttZbdUxB8E2/SGJ34XpgUbMqj2qRmAVZiFh1HsEgB0Hv8Aa1t64ZzvYpFJIlMhcCCOIgPKqj4SCvSN1uF7DYnfHeW7aTDRlFkdmcyEIwO3XpN2JPgDYgDwxmxaqVld9ePtcsRZ1TgAK1lD8oWjYDV5Dptb17YtQV0cwYRSqxUlSVIOhh4EeY8jitC9X7vUkG7HmWd+ldrabp1Hve9vDFWU6+V7TSWbmXDRsHWMrazlulgDuO3YEHbvmxns49NP0yLdLVyIwinsekWnFlSRibadOolW7WG997drYkzydo6eV0dEZUJVn+FTbYtsdvphZBKroqSOKmB7stQdGlSGBRW0kC9+zADcAWvgqqlno5kkaBpoxok1A8vUbEagw7FSpt23tc2wsT7P9afPPz6ustw9nnVF1OwUXAuSBuTYDfxJIA+eKNDJNIVlf3KaT7lgC3fZmYHbpt0jsSbk4q1NQskrFijxQEAJbqM46hbVYEhSAACd2PYjFaqlWTUKm7lo1b2FdLMtmG5sbt1W7kLa433OFiMaeVuvD739UNKjO6dNYMoJjtrC3Yrq7XCgne2Kua1dFMkkdTy2jS2sTJZRq+E3caT6EeOJudUdXLp40GlSnMktdja6sEVtOkXF7ncDw3x1JJVDVeKFxoFlEjAl9rjdLafise+w232WRhQj1Jcuv6EZ4Ympxqy6pIX/AOmnYyQkeSNvJF6WLL+jiq9fBVN7LWwNTVLoyBHIu6kdYgmXZwR3AIa3dcNKwRLzWZZKNyqO86W03FhYtupIJsdSi4HkNu80SOePlVkSSwSuBE8YZtm+BmKi8Z7AOp7kG4xixh0Xa669zJcQ8ONHVyV8mk0lLTK0cCd2aAOyKwtbQpJYWPcJ5YpRUMTpHDURrNV5nTu5qiqyLGxUEKFvqWJARZhYXA3udtJLJPl3592qaAjacjVJTjymt+cjt/CWuPtXG+KFdwfTpGz0nuoZRedoizu0ADOYqcC+kOx3C9wdvDGCku8OcQoImu49kpkSL2yV9InkToci+xS9hrvu17X74vkNQs0sSl6ViWmhUXMRO5miA7g93jHfdl6rh/OOLY1kNNFVjkQAB1pE/wDTwL0i4U9VRMbRqBcINdt7tjcZfxMIjGlc0VPJOw5FOPihS1lEhGwJO3YAE6bnwA21POsiK6MGRgGVlNwwIuCCNiCN74kxloJDQy2/9JK3/wCrIx/5UjH9Rz91ujU4AMGDBgAwYMKeJcxaGICK3PlYRwg9tbAnUR4qihpCPJDgBdVye2VGgb09M4LeU0y7hfVYtif09I7xkYzvFNXFmJNPTTRzPTS6p6Nm0+1BO6aj4K3zXULNbDvNFmoqLTRQ8+SMAKjNu+93cm4LMepjbck+OPNc4zSKovVtRSqwa05gbUAy7a1dLS09Qg/jEUMBpa/ScAaKTP4qmnmlrCYGSoCU0MS/vqmf4U27mR920gFStxcjs9hpafLY3qpUQVEgVJDToR7Q+o6AkV7cxyew8Sd7DEXD2WxOqV9RJDUFELQVZj0SCIrf3v2Syi41WFtztc4MrlNRKlbMBd9Qy6na420kmZ7AkM48bWRCo7scDMYuTsixluXSCVKutTVVPdYIVGqOhUi5ue2u3xy+Pwrt3vU6OzcwMBKAivVGO6yqbuUgBb1UagCD6kbVpNzJZOY7ErPHpsatlVY7R81rrAjMbnwttsTd3Fk/2nZWdWLQkxjTACAAqqPIAb3uTe1r2xPYbdo0o7dvXl6b9uSXU9aqGNYlEQqC7Bp2bms9rArG12YbId2UBbDY2GOqbnymJiaohlZX2SEL3s5Q+8vZtrHbSCRfvdMkFIdADF3LNuWa5sLlna4UfCu5A+HFKPN6qQqUhsNTRyLoJKtuAwd2jDINr6Q1yGA88DOcs4rLi/Hx5bbXR9p6accm6VKnqUkVCuEB7O4b4z1G1gSNI7jH2jzeRQgJMnQ5KyLy6hym/RHYI43VdrDxucfEzOrj0c5ARqZGIiPvCb6GUxu4RD0qS47nw7YtQ10VRojkXRMVZlFwSu5QtHIt1uP0TcAi4F8BJPbJJrl4+PWZFmNCs0TSRKXDREGnY6El1dfUpF0fckNsbkXPkjmzYWmV5aViVOpLbe7lsC7AfFyyqlSx6k28cMxqpZWYhQAFMs0jbzxqrXayAASIe/SbqF6h4IfygwGB+Yj08ccw6rw6nke9y2oITYCz7kXK2sb2xKObsbGGgpzVN532P8b/AH422JllcrVDoFaGYKdRkWytC7CTVIUKjexVFBU/CSTfDaWqWmUxx9TrHqM0zEJs1hzJSDc31HSAbWI22xTy5Wp4I0DUwqJeuRguhWQEamAULchWUC+nc39MT5fQxRQc2dTFEqbQOQyxWbUHO3VKTYkksQbgE9zhlVTVcuV7Jcet1kl3b+J5ZpObY1Ehsi6YgsSg7FmjkezMLjvqOzbX8O6mlnHNKpUHZUTTULdgLXYCTpVukXve+o+eO6zPZNxFHYnQI2ZWe5cBuqNOtAFvu+nsfniOasr+srF3YLGDGp02tqka04JQ72GzC42Nt8EUpZZJd/hw623zOanNJYOYWk6Y1RQKhOWrsbDVzlBU3s1xp2JHYYl03eTlXgnblluYpaKTbsu4U7dJK2bpHh36TiEDmc6MqiHSW0tdjYavdlNWkXvqGoabG/hi22SQtquoaORtbo12BbwZdRshvcnSBc/LDYRb1fqVvs9nh/eYtpZxThgkbJCmsGmKXc2YEyRdXVHZ91FwNgBfbCiqpjlRM0Clstc6pYQDeiJ3Msa9+V4vH9jdlFrjDvMadkN5GLbyNHUlU/ed0+1ewK/Fvb7oPniKlqeSZG0qsa3erJV7EsgbmxDqBQkNcDe5JPbc1cxOHaK629dZ538GZnjLLEhL5rTqJZiqDmMeYtPHazVEcfZyFINrgdz4tenLl1JRx1D1U61VJXIhBbqqJ5LAAJpF2U9LLYjQTtYb40FKBl86QghqCpP73a9xBI2/Jv2Mbi5TyN18VwmzfKYKeoq3rwslLUxhY5WN5Ij29mjUXY3+NOWu1je9r4gag6yLN/aGloqumMLiMFYpH5nNgYablvFgbq4ubG2574c8NVbIzUkzFpIhqjc95ob2ViT3dD0P66W21gY88zHi6oEU3KdaMUUaMEqxeoqxpDKDewUPbSbam1G3Tjb5hrlghqoUYTRgTJGdmYMvXCe27KSu+wYIfs4A1eDEFBWJNGksbBkkUMpHiCLjE+ADGYp29orJZu6QAwR+RY2aZhv5hI/MGOQeOHGfZh7PTyzAaiiEqv32t0r82aw+uM3V1X7m0kKKhmlZ1iVbhedNISWZmtZdTa3Jt54AVrx05BqBTA0HO5InWUFz1iPmcu26FzYWbVbe2NFX5BFJMs6lop1I97EdLOoO6PsVdT2swNvC2MDn2WKp5tVQvRDWrmpo5RJGrK2pXmh0AEA7lih+eN3HXSU1JJNVyxyctWcyRKVDoBcGxZuo+htuLYAX5+RV1Ao9zBEomqwouXW/uqew3PMILEDuq2+1i3XVJsdQkJm0h41ZddIrrpVFC3Opmv1dtjcjSML+G6MRwGorNGze0TPqJPtBJBQqCdohoRVsd1BGHfDdFIzNUzqElJZehuiQbWksBvsAoJJ6VBsCxGJLJXNunFQi5Prkvzwy5jDKMt5QDPoaW2nUq2sgJKoPGyg23Nz3OPldWMzmCFgsgCu7MpKoha3y1EA2F/AnFjM6po4yUTmPsFQEDUSbdz2A7k72AJtjrLqPlIE1M+5JZzcksST6dz2AAxjmVa1/1y8OuAhy2jgKGVrCnd1eOORbEyFiBIxclmdyRpBI20i18MYo55wGdmgRkIMS21qSTZjIDsdNtgNjfc46mXm1IU8tkhUPp3LrIxIVvIDSGt3uSe1t/tdPI8ghiYxsArvJoDDSSRoFzYObd7Gwv5jGSyUnJ+ue5db7XA5SRuk8wYR6AWcuPRirbM3qe/jhNVUTAPHoKdJZliColY7LclDq1JKGS+57DxvcTcRyUtFEZZnn6pdShZZC7vYkIvVbTYHpNlAG9rXxjz+UZHUrNTSS2k1xMeWpSxul7P8AEpuLi1xa/c4i6kY7WX4enVqfqgnJd3X37szW1E3NjOuOMyw+8iWR7Fo7AMXFwVOhmRg22rci2F+frzqKJdcUjLUpGW5YI/OaQACth0lb2FiAe4O+S/8AjrrjkFGodv8AzJ295cKraOrp1AbiwvYb4+0XHdouXLSK1pY3UKQqoE0drHUWupILE3uATbbGO3pr9yNuOErQcZKDyaezz9+rG6q3SWocOYGhjPXq6WiWJVcjwLLzChPxIAtjvj7O8k0moloiAwSVGDIilwqixOlppBe3fTddrnfz2o45kbmkUsRaRiLuFsYyztocDZjum9gTZrk7YYQceQK4Bom5KESIoZdXNJYtIxL799gb77+Aw7en/JEXg60UrReXLrb3Z2z577LqF3BcA0ySqS6BQsrOxPvGdTs1rG1tiSD2xbOUkbpPMrCPQCzlwPJirXDN6nvjDZZx7DPKFqufGDLeMqdKJvZFfluWPgSWBW972GNvLQNENUMjgBy7o15NYtui62Gj0sQAT2tjKmpbGaVaNSnLVnk+7L3fDYRt1OkdSi6l0mKbpAeTSb6FJJVhZjp32/DFHL0eBnVTd4zzKn3ZHtAZTZ4gCQHJXcAC7athcYbzItTTqyqLsqyR61+BrakJHe4NtvnibK6nmwxvdSWUElDdSbb2JFyL3xK+RXrtReXJrrxy45ndPMk0autmR1uLjZgw8j6eBxn6+laBk0jVpJFKijSq+7sYZCLgo1rqSO43PbDMKYZ9g7RzElmLjTCwAAABFwHt57EDbfF6sphLG8bEgMpUlTYi4tsR2OF7EYy1Jcn11suu8z09JHURvTycySGo1HVdT7M6lfd6lJsyuCVPYEWHYYr8OVsskUkExU1dKxjdmXZjb3c1ge0ikNsR9obWx2ka63gqFVIpW0C565ZRuswZAANaqDc6bOlhe+F+cytBUQ1b6VZWFNVBSSpikciCU3OxD6e9yBI+DRmtDeuutj+TPFXjaWVkR5dY5uYZgoSKNkuoWniPUQt2C2sCb3Y4ccFcRJJPJTCWqqZNPOeeWPRGL6VCotgUUjcAixsSCb4j/KBSujxy0tG1RVynQspHMFKABdlR20IxHY9IuCWPYFNk9QlGyx1OY09JZw8kMcglnme4JNTOw7nxVVAsbA2xE1zf8PNyaiel7K16iEfoufeqN/syksfITIMaPGUzydVFPWRkMIpFJZSLNDLZJDfsVAKy7d+WuNXgDO8UNzJaSn2s8pmcHxSABhb/AGxh+l8JeMM0pn1Ub09TUuAsjLTJdodyUfWWUI1wSLG/pbDhzzMxkNtoKdEB/Smdmcf0Y4j9cZHMs0iFfK9FWxR1LWimjnjcwStECQOaAAkiqSDZjsO1wcAQZfzq1ZaMZnIAyESQ1NIEqljbpbclQ1wSNek2vjRZ1SK8tBQKPd6hI69/dUwBUH0MpiHrY4oZOJa2rgqJpqIimDlFpJTKzmRdB1sQNKAeA7m1+2HOQWkzGunPaFIqdT5WXnSW+ZkQH+TgCPjatMkkdHFIoeQgSIwvdJNShgfNT1WG99J+bjhpTEr0x35DBVPmjDUl/UA6fp64XZDSLWRyzyHWsz3iO6yRIpBC3HwlXB7Ei4v4nDZoUpIZGU9RN9Urnrc2VdTHzOlfTF2tHU1d5OvCfaxprYsvF7cu+2e3Kxns6mlqKu8AUikHMDK5u5uVeIgGwLaSu4uNLeDY19JULKiSL8LqGHyIuMJ04fIVSknJdk0y8tRpe5LMQGvpOpnIO/xeOJ8mzGMvJTRrYU4VVN/iAFjb+SRpPrjMrSh+nd1n47DWlJqs7vJ5Lw2W4cXzKNPmB9tZ9IEEh5Guwu0qXO5tcruyDe1x672s1rVppkkdnKzFYdNxpQgsQ9j87EjwAxWTK2WRIDLHyhKZ1XfmNZ9envbSHb4vKwxHxHNFHM71QPI9nKq2klVJJMgJA6SVCWJt2PrierCUlbhu3/PEqVWrCEr7Xlnu+OBT/KxlgloHmvZ6a8q/pgKQyH+UDt6hfljxD2uQd4ifkw/xtjQcR8Xy5hHFHciCNV2vvO4AvI9vAEdKn+Ud7BUmOXXklKyzsen0dh5ulrSbV80iH25/4mT+x/rx17a38VJ/Z/1YlAx1jX11wOksM/5P0K3tz/xMn9n/AF4+isf+Jf6lP9eLGPtsNfkSWE/9P09i5wvQmsrIKaQBElJ1EkElVUuygDxYKRe+1yd7Wx73nuarTql76pHEa2sLFvtb7WH+WPzxY3BVmVlN1ZTZlI7EEbgjHoXDXGkVY7xVm860/LVUBbm3J1sqr8LMAm3gQbbY3sE4zdn/AGcHTVGrRtUi7rZnu7z0KskNLShVZnkCrGhY3aRz0qTfvc7n0vg4Zk9wIyArxExyAAAahvcAACzAhhYfaxBU00hpIWkdUmhCSFn+HUq2bV6EFhcfPFrKqYxiWWV1LSHWxXZVAUKAL9wAL3ONtqOo1vv14HF15yq3exrrxvl3Cvi+J6i1PHuVXnOLkagp6EuCCCzAm4O2m+GvDuZ+006SHTqIGsKbhWsDbvtsQbHcX3wto/36oqIZHgcgxuLAnSDcXBGxsdQPk3ji3QUy00wiQRrHIgCi/WzoLH0Puwu+3w+N8KllHU3rp/BPD3m5Pc818eG3mjN5mXJ9t5ioJXaG7WtCgNkkF9tSupfe/wAVtu+NKyRZhRvGx1JKjRubW3F0bbwIYEj6Y7HD8OvVZiLswjLEoGYEMwXtc3P4nFDh6oMc8tM8mpt2VVWyRKukKo8iUZG0gWvq3O+FWUZ7NxbhqUuykntTv77uOfBeIhNVU1OTScst7WsTxPpNm5sRMclj4M2lrH9IYr8MvJ1R0NAKekFMeW1RHoLz+GsajI6Ed2K32Pe4w7yheVmFfB2VzHUqP5xTG9v14r/NsL814snQ1MkNMklPRtpnZpCsjEKrvy1ClelWB6iL74oAzyLhxYaBaKRuYvLZHNrAiQsWAHgo1EAeAAw14TrGmpImc3kAMch85ImMch/pq2M/w1mVdJMVqUhMTwrKkkGrSjE7wsWJ1NpIa4A7HzGG/Cx0yVkPYLPrX+TMiyE/1hl/DAEGSkmor3PY1IVfklPCP+LVjJ5zwbOtO0PttP7O03OZKmEDU3M5pBcPupOx6e2NPw/IOVUszAD2mp1NcCwWVlvfsLBe/pjE1P5Pw0MopHpKzmIyrJUKGmQsCAyzISCRe4ug7d8AavgqoSXmsI6EMpCGSjcOH7mzEIpFvK574hyFr5dUyCXlyVVVOFkF76mnaGO2kahsqrcdgL+GGnCgZKZUemanaIBCp0ENpUdalCQVPmbHY4Ufku1vR00bt8KiotpB5iza2Aud1KyFjcb7L54lFXz4GYzUJxb4/bMffupyZ44FUclAqSOFACyOLoNthe2+321xfzM65YIvdnqMjK4uSqDYqLWuJCm+1sL6vKZyZYlEfKmlEhkLHUnwlhp02J6djcWuPLDCk66mZrxkRhYxYdakjW4Y27G6GwJG2LKmrZWK8M5uU5S7/wAZejGTg2Nu/hjKZLA+qlTkyI8AcTOykBtSm9m7Prez7X7b4a5fnQkqJYdNgvwN/GadpLfyWIGK/FPEa0YRiLqOuXa5SMEKWsPHUygDx3xmKlG8bbfb58yibhO077Hb1X5XkKM6rFjM9dJJoNNKsYBO2jYMtvEvrJG19ktjzXj7jCfMjoS8VKDtESQ0tuzSFTtvuE3A7m5talxTnjV9QZ3QIo2jj2uoGwZyPie3j2A2HiStGNPEYnWso7jvaP0WoJzq7Xnb8vnyE7UjAk6SCftABv2oUf8Avwc9l/hCo/SYr/zYz/fhzjoY1e04o6qwdvplbrwFK1sh+Fg3y5Z/ukXEgqZvIf1Y/wDewxaJT3UH5gYj9gi/io/6A/yxHXjwLFhqv8n5lE1co7/8KD++Y4jasY9pRfyDp/0o5w2SljHZFHyUf5YmUW7Yx2keBYsJVf73539hGYmfwdvTSx/5pVP7OLNHSyoyujGJkN0cN1KfMKgVAfDx223w0x8xjtnuJLR8P3Z9dbz0XIONDX8miqgEkd+qQbLUKoLaR9x2IAK+Ivp72XUrHJJQyxLeQxOY9jvKkbi4+ZS6epvjw6WMMLEXH/f7fXG94L49kiiSkkjDMp924Ftcags4YC3vFUEgj4u9rg36OFxTnaG++R5rS2iewcq0fps0+K+D0LJrvPNKsbxxsqCzqVLMuq7aTuOkqt/HT6Ys590xiX3Y5Tq5aQbKoNnINiQdBYA4tzVaLGZSw0BdWrwta9/wxQyet9rpzzIwrHUkkbC+m/gQe4KkH64vleX6rZKyObRlGnJRbzzfrn9yTPa5oovdgNK5CRL95j/gBdj6A4Vc7my0k4l5SyEq6Bd5JFVuhiB2UcwWY7EC2+JYY5ZIqaZDFJLDqV1BKoxsY30nT0kMNunzGLFLljrC2p1SRpTMSoDBLtcqNQ+7dS2x3Jxm0VDmShKdPENPZZrl39Z5C3OOjNqVh/DU06H15bxOv4an/E4r5lwPSTvNJIspM27gTOEvoCatCsFJsB3BwqqzM1fl1SxPKqJZCqk/m1NPJpH6yhWNvEY+flApJ2lRoqCSoGgAyrUyqse52MMLqzkXvcd7geGK5x1XYxTnrxvY1PD+RQ0UCwwJpVQLmwBc2ALtYAFiALm2OMsBXMp/KSmhI+aSTg/sZcYDhrK6b2uGSatdJ1fopzDLAGa3wn2ks8n0ON4rEZpCPBqSa/rplgt+GpvxxEmRcOqRFUgLc+01PSdtV5nYA387/tx5tmVC8hZ6ygTLkB3kp6ITMB586JiFProx6bkwPPr4+1qm4t5PBC1/6RbGHq4suSnNS0FRXMJhBCauVmFTITpums6AuoMNWgfCbC2ANT+T/wBl9lIpKqWqTWbvK5Zg2kdPUo0gCx028fXE35KqELl9PIWZnaFFOq3QEuNAAHYHV6nBwrmV3lpnpUpZYAjGONlZCr30spVV+6QQQLWxV/J5m4TVRaSOXNUrrPbVz5HCdu/LOrv2xKKk7pEJuKs5ccu81md1pihYrvI3RGPN22X9u59AcQcNyaomJAEusiawA94LKT0gXuACCd9OnE2c0TyCNoyokicOob4W2KkG24uGO47G2PmT0bx8x5CvMlfWwW+lbKFAF9zso3sLm+J/p7Pn16Fd59ry9P7E+V0EwNNG0JT2csWlutpLqy9Njq6y2o3Atbxx55+VbMmatYASGmiEfNbQ3LMi3YKXtp6VcNYn4m33UY9JzfOHjn1Kf3vBYVH+0G3hfoGljbwbCbJcqhFCtc8k8Lyo1S7Rzuu8pMtihblMRrCi6nsBjNfWks8rrd33+TOEcKc7rPVe/ut8d6PM6zNIKhorAaVvqbz9Nsd1VNTvMixGyleqx2v6Y2K8PicxCdIleddUT1VNDJr21cvmU3IZZAvVpNwQDpLaWtxW/kxb7EKD9KKtlQ/RJ4ZlH9LHPeHe5noYaVj+6PkY2oypRUcpHuLA38vT54+vkzCblagdgdXof8caGb8n0yG6pXX+8DSyAf7yJj+GKrcIVKNq504bzNBIT9eXM+IOhI2YaUob7rwEyZQ5laK4uvj4b7jH2nyiR3aMWDKbG5xf/cSdCXE76j4tQVov/uGxDBl9UrFhKoJ7kwVlz9DR4j2EuBctKYf+XoyvRZS8pYCwKkix8x4Y+0mVvIjOLdNzY+NsWabK6gE6ZiCe9qStN/8A+XFql4cqSCqySgHuBQVP98ipiP8Ajz4E/wDbYfdP0YuhyzVC0modIvbzH+eOny9ORzNfVtt53w2Xgqr7D2p18QtNEg/31aP+HF6P8m05t0SH0kqo4x+EVLKfwbElhpciEtM0FsbefD5M1UpByBpPvbjx/G+IcxziJo0iXplDBkI+JWG40gbk3ttbG5/8MgimRlibSpPLAlmZiN7KZp0hufDVGB8sOch4cpdPL51RGSbGHopWBsTYClSIsLA7hmBsdzY4tjh2s7mjW0xGScVC/e/x8nXDcr1WVRqEPOiKLLE40HVEyuUIa2kOtiL/AGXW+H+URO000zRmISBFCMRqOjVdjpJAvcDv2UYzdTA1JVy01GBG1VFG8fiFeNmEzsTfuhiFzck42GVVomiWS1idmU91YGzKfkwIx0Ly7O73+fWXoea1YdrZbl4b/tf1QlpcxKVRRQBTFzHcKB789Z7AbHdbnu18aQi+M+Mmmvy9UfI53OvvzPj5mi1rfH9q/ba2G2aVogieQi+kbD7x7Ko9SbD64VEm0o9fJmnKSUpVO/38DHZ1lfJrMsQTSMgmk0RtayKKeXxAubbAXJsMUfyj0QDRVD0sFUl0h0O8iSaney6SpKWu3Zh57+GGktcKnMKBgLaaWeRl+6zNDHY+oOtfocLOOMr5kvMmhM1OqrZfbzAAykm/LIVNVz8RfwHa2K5t6z1tpbTUVFauwiyeDK4qiKN6A0lUWvEJEvdhv0SIzIT8yD6Y04B/dSDyFJP9Ly09v7j+GMfwVneVPVLBTUKxVFiQ4EMgFgSfexyOfDz8RjZ5a2rMpvKOliH1kkmJ/Yi4iTADl5jMu1poY5F8y0bNG/4K0OMFmkuWU1ZoBqppIJeatLrAghkfr1jmlFB6tQ6yBc2GN/xKuioo57bB2gc/dWZen8ZY4l/WxnuOJ6lZI46SgWZ5VJaoMSvy7EC1nKqWsQRqcDY7G2AI+CatDUSkJSxGe7tatE88jDcAhbqEVdXSrEL+OJqeFhmFTTInxywVivtaMW5ch73ueVbbvrOEFBQGgninnihWeRwoaVzPUyAmzLDFCixxdJIulwAd7+Ouz4+z1lHV/Z1GllP6E9tBPoJlQfrnEoy1XcjOOtGzNTmNYsMTyN2UXsO5PgB6k2A+eF/DdXKytFUW58ZBa3Yq/UpFtrDdfmpxdzei50TR6tJNirWvpZWDKbeIuBtiDLaGQSPNMyGRlVAEBCqqknxJJJLE/hia1ezd9vXyVS1+1TWzr4t4lHNshlkE6RyqsVRvICl2B0hTpN7DUABuDbfCdpmfIIgi6nkpYogNN9LyKsV7W+wxufLTjc486h4nOWzzUcgh0LI0kQecRu8czGQaOaoiYK5eMAyKRo7djiEpuVrlkKai21vE+e06wGaKLTTGN44qWEcy8rsY+XPYvyHAdibCMkFPiB2xoI86rBNJHFOkiQFxK9TGmq0a6iV5DoO5C/Dtckja2G8nEdNIq+0QTIAyuDJAWRWU6lbmxa4gQRcHXiu+T5dXpMIaglZtWv2aqYKWYG7aEfl6jck3U6j8QOIkyjDx3MqU5lgp9dQIikMdV74c62m8TxDYb3IY2sfI4vRcdKSA1HUi87U4IMLBpV1XQWm1baW3IA2OG83D0RZXRpInWMR6430lkXsrD4Wtc2JFxc2tc4VUHCBiFKvN1iGqlqGLX1PzBNYXJJJHNF2J3sT44AbRcQwvK0SCVyknKdkidkR7A6SwFtri57C+5GKsnGFOrrGyVIdwSq+yT3YLbUQOXuBqW/zHnhZX8PVTy60Smicyqxq4pJEkZFa+l4QmmQ6Pd9chHjYbAUuIMhWmlkzCqqJpY016URpEdec8YA189UREtbYItjdySLkDQ0fF0EqB4o6l1N7EU0tjY2O5QeIIxxDxasgk5VNUycpijgIq6WADEHmOu9iD9cZrKOGjNS0ihqWoFM8wkp5H5kTc19SliuocxFII1K3xN2vqw2g4GUJURApFC9UJ4441Gi3JSMpJHYKVLBm09r6T3GAO6LjczNAEo5gJ4mmi1PFd0RVbYJI1mOtbBrdz2scL240qGRtccdIyxxyHXHLMbTOYljMZELLJzBp36TcG9r4Z5dwJT07UhgCp7OGVzy111IePQdbLp3vZr2Pb64s0XDNPTCcMwaCclnimCMtzbuzLrYC1gGY2Bt2AsBl6fMqmepVJZanktHOOWjQxlpoGW6A07M67FhYyXuMVuF4FM9DWxmFy7NBMkSMzwcyMuBLJI7SM6PGqktptrbYXx8zKsjkaIU2hDTyDlijczJAAx1sIqaAsXeMlCkllF9iNyX+b8erDccpYm8PaZ0j1fKOMyzH5GMYAtZpTySZpG0Lorw0rFg6kgiaRQoNiD/BMb3+zh9lNFyY9JbUxZnZrWuzsWY28Bc9sIeApnqBNWyFTz2CxFUZQYorhDpc6hdmkO9rgg2F7DVMtwQfHEtZ21SGotbW3mfyfN5HnbX+Zmuafbwj2bwv1DrF/C+LnEELEQuqGQRyh2QWuwAYbX2JUkNb0xXy7JZUaESSK0dODywFIZukoC5vbZSRt3O+GmZVqQRSTSGyRozsfRRc/3YtnKKmnHrpepTShKVNxn1v++zkYjhOPmZhmNRoKDUkKq1rrZea/YkAsZFJHnfGUz/K6FszlNY0lLUMQySHlSwyJfRGx5kTco9NrPYXGxO2Nhk8wosu51SxjklvNKQuphLO1woUfEwLKgH6IxlKQoZ2aaur6aWoVYiayjiRZQLlUu0ZjHc7bX8cUyd3cvjHVVjdZBlVTA1nq0mh09KinSNgdrHVGQpFr7aR3GLnDI1TVsu1jMIlPmsUag3+UjSjFDhrI1y2GQNO8kdzIdYVViAG4VVAVV2JsABhpwXTNHRQ610vIDM6n7LzMZWH0ZyPpjBIs8SZcailliU2dlvGxHwSL1Rtv91wrfTCSqzSoloBPRxK08iKyRyG2ktbUDcgXS5uCRutr41uMvQr7PVTU/ZJL1EP6zWmQfKQiT/bemAMQeHK9ZIqoRxLURPrkqaqquZE0srRlYotEcdjsFNlt441NFKua0EqOyHXqjaSEPo1A3V4mkUFgp0nUNtSm2MZxFR1FRLWwMtXNU84chVJFKsPS6cwFhEQd1YG7Ei47Y32S01YGMlVNEq6bLTwpaOIXBuXbqYgC32V77YAYcHZs1TTKZbCeMmKdfuyx7N9G2cfosuHeMXWyewVgqr2p6kpFUeUcnwxTegNxEx/mz4Y2mADHmX5aaaB442DXqo/hjG5eNj1g+Q21KT3KkDucOeMuM+STBTEGbs7ncReluzP6dh3N+x81dizMzEszG7MxuWPmT4+X4DG/htHyrK8sonMxelVhpWp5yXkuuBmaJuX1ws0RO+qJ2Qn6oQcMJs3qHtzXSe3YVEEMv9qSMv8A2sRZnQ8smRB093UeHmy/4j6j1qxyBgCDcHsRjl4qhVw09WXgeq0ficLpClrpK+9b0x5T8SzIR7uMAdhDLUwfsjnKf2MMl49qdrGoUfo1Ubf86jb+/GUGOsa/bTRu/wCuw73eptofyjTr3kqyf0lpWA/oxx4mH5S5fEz/ANTB/wC7jCDH0HD/ACJj/U0Hvfn8G3/8RpQLKagD0ipl/wCpv7sU5OParb3lW3mGmpk/4KEn9uMrj7jH+RMktE4fn5/A9rOLaiTwb9erqCPqIWhB+owtmzORjq0Uqv8AfWlRn/pz8xv24qYMQdeb3l8dG4WP7fVk9XXTSi0s80i9tLSNo/oAhP7OKCUwJEUYClviKgDQvidvHwHr8jiQuS2hBqc+Hgo82PgP2nwxdyZNGtG/Og3c/fB+Fh6W2t4WI+fR0dgpYialU+n78jh6c0rRwNKVLDpdo1u/anvZ6ZwlxwkSJBUKsaIoRJEFlUAWAdfsgC3UNu9woGPQ0cEAggg7gjsceBYecLcTyUTad3gJ6o7/AA+ZjvsD46dgfQknHYxWjbfqpeXsePwWl72hX8/f3PY8ZHjVvaZYMvHaQ86o9IIyDpP85JpT1Akw7fP6cUrVfNHIVC5fyC9xbvqvtpte+1r4z2RK0UdRX1YKyzDmOtiTDEgPLiAAvdVuWAG7s2OOd8Xcd5jE8iUx9pDRFKky08Yk9nKsRGXQgllvc2AJ2B7YrQCpqKKYRTU+ZmpYgsXEccKmMKOjqIIYFiosbnwOKtNxNTs1U6PG6VI6qqkB50S6Sqc6B7yDQpsJFBG1yFwyyjhmH2qjnpREKWGnKiWJhqqGNlUPpHUqqC1yT1HcbYAY11Ey0tJQsxkaXlwOxF9aIuqZjfwZEZbnxcY2uM3kY59VNUd0hvTxepBBnYfNwsfoYm88aTABhNxPQu6LLELzwNzIx/GCxDx/roSBfYNoP2cOcGAM9Lm16YVEEbzhlDIiWDPqtb4yAtr733FjtcWxgOIMxDtorpo5py6JHlsMmmIO7WTnybFz2JBsoAPSRvjb6PY6kp2p6ly0Z8IpmuXQ+SynrX9PWL9SjGTznhpolq0nqIoctll9pkcqOdqYgmNSRYdYuGsW3AGANPl8iTRvRVMsM86x2qEjWyqHJstrm1hsLm+wNhfGazXiOqoYxl7FjJY8qqPeWEbf1y7Kx8rN3barw/mcImcFjl1LSATCBwUkqg42nlZt3U3toBJLEat7DGtr8vizSkUuksWo64mddMkRBIVwLm1xvpPdTYgeE6coxknJXRXVjKUGouz4nkDK0JLLqeMkll3LISblhfdgTuR372v2xdhlV1DKQVPYjxx3U08sEpp6gBZVFwR8Mq+Dp6eY7qdjhdWw8oNLG2m27Kd1f6Dsx8x9b49LTqLU14Zx+3XDy4HkKtKTn2dTKfHj3+/nxOqz3riL7Is0nqPsp9e59B645rMqDEsh0Oe+11b5jz9RY/PHOVTgXWS6TMSzBttRP3T2YAWG3lvhnjCpU68Hrq9/TguXuS7ethai7JuNtj48XzT+1jOSh4/ziFf0huv4jt+sBj7G4IuCCPMHGixm66nZqlmji1BFCnTpHUere5F9iMcTG6IVOOtSbfLaeu0T/wAmnVmqeISXGV7IlwY55c38Q/8AST/Xg0S/xD/in+vHJ/wsR/B+R6ZaXwX/AGx80d3x9vitTzO+6Qudge6dmFwd38RjuanlZSvIk3BHxJ4/r4wsHXeag/IlLS+Djk6sb94TVaL3YX8u5/Ab4sw0Usnf3S+ti5+Q3C/M3+WLcFGDBoMaxl0syqALEix7euJ8vm1xIx7lRf5+P7cd7DaHpRku0d8r8DxekP8AlWJqwaopQV7N7X4PZxOqWmWMaUFvE+ZPmSdycQZjERaVBd0vt99ftL/iPUDF3Ec86oNTsFHmf++/pjtShFQtsX2PKQqTdTW2t+Nz7FIGUMpuCLg+YOK1RVksY4gGfxJ+GP1b18lG59O+F9IXZjEpaOM3dSRZypO6rf4QGPci9iNh3xouFuHDWsYorx0qG00o7ufGNCe7n7T+Hzxq1MVanrPL7t8vfgbtLBa1XVWe/klxfst5f/J1kD1DF2dzSJIHYE7Vc6dmt20Rny2JVRvoxoeJOKQ8jxRyTwJA4D1sah4o5bH3UqkbxgEaiCAGIBI74Y8Q57S5ckNMwlhWRTHE0EZblWFhbY9QvcABjtcjGeo8xgq4RQzVEfLlkB9optKpWXOpopAN4Zn+0u2rexNyMefqT15OR6qnDUgo8BTUU6000a1lBHJTzuArQLrjDSEWlp3HXDqYgtCTY/EhJuDuo8tiy6D2eiTTJPKRGGJa8ji5kYk3KxqCx37JbuRiDhPLXp5attJpqMMRFAxBUad3mFyeWjHsgIFrmww54cgM8hrXBAZdFOrCxWIkEuR3DSkBrHcKsYsDqGIExxlOXpTwxwpfSihQTuW82J8WJuSfEk4t4MGADBgwYAq5nQJURPFILo4sbGxHiCCNwwNiCNwQDjPUR1N7LVhZJorOjOotOqkaZ1FrBwbBgLaW9GUnV4W55lC1KKNRSSNtcUq/FE1iLjzBBIKnZgSDgDG1eVI9fDLXaJJmaRaOJEJSFUBfmOSLs2ykk7KSLDxCDguhnl9mqUaU1aVckWYO8xKkJq1JoLabG6BdK9J/HGxnpI620NWhjqYDqHLdkYX6ebE6kMUYG3pfS24w2ynLIqaJYoU0It9rkkk7kkncknck4ArcRcPw1sXLlBuN0kXZ4m+8p8PUdj4jHkfE2Q1NIyCoXXTq4JqEHSwG6h1G8Z1WJv07bHHuOBhsb9vG+LqVedP6dm9FFfDQrfUs1se9HhTxpKu4V1P1HzH+eK/s0qfm31D7km/4ON/xDY3WeUOTySFYoubUk7x0LEMSfFzEwjX1aQjxxglRop2WfmwMdkgmYkgeYcqBIfVdt/HHWo42FaaTjZ8b9eWZwq+jqmHg5KWtHha/v55Hf7pBfzqPH6kXX+ktxb52x8ydwyu4sdUjHbyB0j9ijF2R9IJ8hf8ADCzL8sjMUZZBrKAlhs1yLncWPfG61NTSvfJ8uvI58XSdJuzV2llnx42+7GuOX7H5Yqfufb4Zpl/WDf8AGGOPj00oB9+Tt9pF/wALYm5ytnH7fBVGnC6tNeT9mVeHvhH81D/wHDjCDJYpCNpNPuovsA7aTYbnw8/HDL2Jz3qJPkAg/wCi+KcNOXZK0Xv4ce82cZCLrNuS3ceHcXcKaGujjDRlrssj2VQWNixYbLfbe1/TFn9y4z8QZ/5bMw/Am37McUSrHLMoAVbI9hsBcFfkPhxObnrReS2rjuvy4FdNU9SSzex8N9ufHgdc2Z/hURr9592+ig2H1P0xyYooSHlfU/YM5ufkqjt8lGJuHqPnTOTFV1lPuS1O5XlW7gEWEv8AJVtW3Y49L4RhylW/eYh5w76yeePQ873o+WOdVx6jJq12uLy9MvydajoyU4p62qnuSz8W8/wZPJOCJq1kkqFemgXcA7TTAixFv4NCO9+r0HfHqdFRxwxrFEgSNBZVUWCjFi2PmOXVqyqy1pHZo0IUYKEFkYaVzG37n5r7+CZrU1UwtrPcRSFbaJl+y4tqttY3GKeV8I09WXWcRVkKG0dWr6ZmKNYwzGO3MI++diLHvvjW8VZH7dB7O0hSNmUyWUEuoNyoJ+Ek26huLYgigDgUVEOVDENMssewhH8XGfGU+J30A3PUVvWWnckQr5DAN6SJrTkdpnX+AHmineTwuAm/WBrMQUNGkMaRRKERAFVR4Af998T4AMGDBgAwYMGADBgwYAXZzlCVCrcskiHVHKnxRt5i+xB7FTcMNiMLcur31mnqFCzquq6/BMl7cyO+4AJAZDuhI3IKs2jwg4yTTCtQuzU8iPqv2jLBZgfMGIubHa4U9wLAK+OhqgiiBYc6pgjOlipKmQM4upBHQrdjj6OB6D7VOJP553l/5jtiHiKV2rKYJE8qUt55hHYsvMV4oiFJGr+FYhbt0iwNwC/y/MIp11xOHANjbupHdWB3Vh4qQCMAd0lLHEoSJFjQdlRQoHyAFsKOIMxpDLBRVMYlap1aEZA69FiSb9vMG3ge1sPcefZB+/M8q6nvHRoKaM+Gs31keoPMHyYYAlzX8mdOwIp55afUCNJbmJuOwWQ6h8lYYRz8EZjELKtPOoG2lzGxt+i4K/2sOePP3xmeVUncCRqhx6Ri639DpcfXH3hDOJJKnN6p5Hanik0RoWOleSp1lQTYXAU3Hnvi+niatP6ZGvVwtGp9cUzJy5bWJ8dBUi33VV/+W5vipKZLEGmqgbeNNL/oxquHeI82lWjqmRJYKqUo8UcJvTpr0CQuCdh8W47D1uH+ecYey5glO4UQ+zPUSSb6l0a9gOxvpH442VpKvbO3kaj0Rhr3SfmeU5RSzr/6SqJ5ca2FNJ3UEHuoFt+98PIclr3NkoZvnI0aD63e/wCzG0p+LKlspkzB4ERgpkjjLEgoCLFjt3Fzt4WPjhdk3Hk8y0muONHkrGpp1Abp6daFbt4gjc3vviEcfWjHVjYslo3DylrSV/EpUnANdJ+dlp4B+gGlb9oRQfxxoct/JxRRnXKHqX85yCv9WoCW+YOF2f1VVUZt7AlVJTRil5ymILqkfVbcsL6RvsLfCfPCmjzCsrcoirFdjWUMrMygkCYRnqR1XYkxkeHcG3xHFFTEVKn1SbNmlhqVL6IpG+qeIaaKKoZHWQUikyxwlS0YUHptcAHpOxI7HHT0VLmEEUksEcqSIrrzEViAygixPY2PgceTJVqKusr4rmmk5ftCd7wVcdi9h9qKUNcfP1x6J+S2q5mV0t+6KYzY3/NsUH7ADikuKvFHB1NHR1L08ckciQu0YjnlUBlUkdKyaTuO1sa6gnEkUbg3DorA+YYA3/birmmaRRnlNeSR1OmGMapHHYnT4LvbWxCjxIxn8pqpYMraE2SpplFMAbHS5CrCdtjdXia3rbADlpJat2jgYxwKxWWcfExU2aOHyINw0v2SCq3a5TQ0NHHDGscShEUWCjw/zJ7kncm5xzl1EkESRRiyIoUXNzYDuSdyT3JPc4s4AMGDBgAwYMGADBgwYAMGDBgAxn+PpLZfUbFtShAq7lzIwQKB4liwAHmcaDBgBVw7l7xIzy258zcyWxuFJAAjU/dRQEHnYnuxwZpkMUzcwaop7WE0R0vYdgdirqLnpcMvphrgwBm2NZB+cjWpT78PRIN/GJ20tYdyr3PgmEmUZXlpqhNTO0M9yzwiR4y9wR7yB7Hub/CNxjf4q5jlsNQuieKOVfuyIGHzsw7+uAMRxHw7V+3JX0TQGUQmFo6jUFtcsGUpc3uex2tfzxDlvCMtLk1RSBhJUSxTFiOzySKRYE28LLc2v32xp24XC/mKmpgF76Q4kX5aZ1fSvohXHLUVel9MtNMPAOjxH6urSA/RBgDEcDZ5UqKChjpJVWONhVvNE68sr20MSAbm/cH4l8jhV+UXJzW5tJAt9X7mlkAPdlkZlH1O31x6Us9ePjo4j/NVOq/9ZFH/AH4j/dSpv/8ALKr5iSm/xqBgDL0Wait4dkcW1CkkRgNrNGhHbwvYNbyIxhzHKlRlrKrslQaCpJVSQrInKl7drizG+PX4swqewy2dfVpKcD+zMx/ZiVpMxJ6aWnUeb1TX/BKcj+1gDOcY5ZUpmFHX00Jn5SvFNGjKGKsDpI1EAgFmPzA+Yn/Jpks9NFUtOgiM9S8yxagxjVrWBK7X28PAD5B+MrrXvrqo4gewhguy/rysyn+rGOl4SgbeoaWqNrWnfUh+cShYb+ui+AMRkeQ0dLUVnJkaqWoBjNJCgcRg3YozBtCDqYDWUADDxxpcj4amjiEMeihpwSRHEeZK17ElpJLqhO4IAc+TjGuhhVFCooVR2CiwHyAx3gClleVQ06lYkC6jdmuSzm1tTuxLO1vFiTjL/lAomjX2lASmqL2gX7LFMsizfNLMG/Ra5+AY2uDABgwYMAGDBgwAYMGDABgwYMAGDBgwAYMGDABgwYMAGDBgwAYMGDABgwYMAGDBgwAYMGDABgwYMAGDBgwAYMGDABgwYMAGDBgwB//Z"></div>
+            </div>
+            
+            <div class="login-tabs">
+                <button class="tab-btn active" onclick="switchLoginTab('student')">Student Login</button>
+                <button class="tab-btn" onclick="switchLoginTab('admin')">Admin Login</button>
+            </div>
+
+            <!-- Student Login Form -->
+            <div id="studentLogin" class="login-form active">
+                <form id="studentLoginForm" onsubmit="handleLogin(event, 'student')">
+                    <div class="form-group">
+                        <label class="form-label" for="studentUsername">Username</label>
+                        <input type="text" id="studentUsername" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="studentPassword">Password</label>
+                        <input type="password" id="studentPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Login as Student</button>
+                </form>
+                
+                <div class="auth-links">
+                    <button class="btn btn--outline btn--full-width" onclick="showSignupForm()">Sign Up as New Student</button>
+                    <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+                </div>
+                
+                <div class="demo-credentials">
+                    <p><strong>Demo Credentials:</strong></p>
+                    <p>Username: rajiv | Password: rajiv123</p>
+                    <p>Username: raman | Password: raman123</p>
+                </div>
+            </div>
+
+            <!-- Student Signup Form -->
+            <div id="studentSignup" class="login-form">
+                <form id="signupForm" onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="signupName">Full Name *</label>
+                        <input type="text" id="signupName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupUsername">Username *</label>
+                        <input type="text" id="signupUsername" class="form-control" required>
+                        <small class="form-text">Username must be unique</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupEmail">Email *</label>
+                        <input type="email" id="signupEmail" class="form-control" required>
+                        <small class="form-text">Use @student.srmcem.edu domain</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupStudentId">Student ID *</label>
+                        <input type="text" id="signupStudentId" class="form-control" required>
+                        <small class="form-text">Format: SRM2024XXX</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupCourse">Course/Branch *</label>
+                        <select id="signupCourse" class="form-control" required>
+                            <option value="">Select Course</option>
+                            <option value="B.Tech CSE">B.Tech CSE</option>
+                            <option value="B.Tech ECE">B.Tech ECE</option>
+                            <option value="B.Tech ME">B.Tech ME</option>
+                            <option value="B.Tech CE">B.Tech CE</option>
+                            <option value="B.Tech EE">B.Tech EE</option>
+                            <option value="MBA">MBA</option>
+                            <option value="MCA">MCA</option>
+                            <option value="M.Tech CSE">M.Tech CSE</option>
+                            <option value="M.Tech ECE">M.Tech ECE</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupPassword">Password *</label>
+                        <input type="password" id="signupPassword" class="form-control" required minlength="6">
+                        <small class="form-text">Minimum 6 characters</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupConfirmPassword">Confirm Password *</label>
+                        <input type="password" id="signupConfirmPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Register</button>
+                </form>
+                
+                <div class="auth-links">
+                    <button class="btn btn--secondary btn--full-width" onclick="showLoginForm()">Back to Login</button>
+                </div>
+            </div>
+
+            <!-- Admin Login Form -->
+            <div id="adminLogin" class="login-form">
+                <form onsubmit="handleLogin(event, 'admin')">
+                    <div class="form-group">
+                        <label class="form-label" for="adminUsername">Admin Username</label>
+                        <input type="text" id="adminUsername" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="adminPassword">Admin Password</label>
+                        <input type="password" id="adminPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Login as Admin</button>
+                </form>
+                <div class="demo-credentials">
+                    <p><strong>Demo Credentials:</strong></p>
+                    <p>Username: admin | Password: admin123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Dashboard -->
+    <div id="studentDashboard" class="page">
+        <header class="dashboard-header">
+            <h1>Welcome, <span id="studentName"></span></h1>
+            <button class="btn btn--secondary" onclick="logout()">Logout</button>
+        </header>
+
+        <div class="dashboard-content">
+            <div class="section">
+                <h2>Available Quizzes</h2>
+                <div class="quiz-grid" id="quizGrid">
+                    <!-- Quiz cards will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Your Quiz History</h2>
+                <div class="results-history" id="resultsHistory">
+                    <!-- Results history will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Interface -->
+    <div id="quizPage" class="page">
+        <div class="quiz-header">
+            <h1 id="quizTitle"></h1>
+            <div class="quiz-info">
+                <span id="questionCounter"></span>
+                <span id="timer" class="timer"></span>
+            </div>
+        </div>
+
+        <div class="quiz-content">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="question-container">
+                <h3 id="currentQuestion"></h3>
+                <div class="options-container" id="optionsContainer">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="quiz-controls">
+                <button class="btn btn--secondary" id="prevBtn" onclick="previousQuestion()" disabled>Previous</button>
+                <button class="btn btn--primary" id="nextBtn" onclick="nextQuestion()">Next</button>
+                <button class="btn btn--primary" id="submitBtn" onclick="submitQuiz()" style="display: none;">Submit Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Results -->
+    <div id="resultsPage" class="page">
+        <div class="results-container">
+            <h1>Quiz Results</h1>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span id="scorePercentage"></span>
+                </div>
+                <div class="score-details">
+                    <p id="scoreText"></p>
+                    <p id="timeText"></p>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <button class="btn btn--primary" onclick="emailResults()">Email Results</button>
+                <button class="btn btn--secondary" onclick="goToStudentDashboard()">Take Another Quiz</button>
+            </div>
+
+            <div class="answers-review" id="answersReview">
+                <!-- Answer review will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="page">
+        <header class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <button class="btn btn--secondary" onclick="logout()">Logout</button>
+        </header>
+
+        <div class="admin-content">
+            <div class="admin-tabs">
+                <button class="admin-tab-btn active" onclick="switchAdminTab('overview')">Overview</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('students')">Student Management</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('quizzes')">Quiz Management</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="overviewTab" class="admin-tab-content active">
+                <div class="admin-grid">
+                    <div class="admin-card">
+                        <h3>System Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number" id="totalStudents">0</div>
+                                <div class="stat-label">Total Students</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="pendingApprovals">0</div>
+                                <div class="stat-label">Pending Approvals</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="totalQuizAttempts">0</div>
+                                <div class="stat-label">Quiz Attempts</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="avgScore">0%</div>
+                                <div class="stat-label">Average Score</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>Recent Quiz Results</h3>
+                        <div class="recent-results" id="recentResults">
+                            <!-- Recent results will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>AI Question Generator</h3>
+                        <div class="ai-generator">
+                            <div class="form-group">
+                                <label class="form-label" for="subjectSelect">Subject</label>
+                                <select id="subjectSelect" class="form-control">
+                                    <option value="Mathematics">Mathematics</option>
+                                    <option value="Science">Science</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="English">English</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="difficultySelect">Difficulty</label>
+                                <select id="difficultySelect" class="form-control">
+                                    <option value="Easy">Easy</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Hard">Hard</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="questionCount">Number of Questions</label>
+                                <input type="number" id="questionCount" class="form-control" min="1" max="20" value="5">
+                            </div>
+                            <button class="btn btn--primary" onclick="generateAIQuestions()">Generate Questions</button>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>Performance Analytics</h3>
+                        <div class="analytics-chart" id="analyticsChart" style="position: relative; height: 250px;">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Management Tab -->
+            <div id="studentsTab" class="admin-tab-content">
+                <div class="student-management">
+                    <div class="management-tabs">
+                        <button class="management-tab-btn active" onclick="switchManagementTab('pending')">
+                            Pending Approvals <span class="tab-badge" id="pendingBadge">0</span>
+                        </button>
+                        <button class="management-tab-btn" onclick="switchManagementTab('approved')">
+                            Approved Students <span class="tab-badge" id="approvedBadge">0</span>
+                        </button>
+                        <button class="management-tab-btn" onclick="switchManagementTab('rejected')">
+                            Rejected Applications <span class="tab-badge" id="rejectedBadge">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Pending Students -->
+                    <div id="pendingStudents" class="management-content active">
+                        <div class="management-header">
+                            <h3>Pending Student Registrations</h3>
+                            <div class="bulk-actions">
+                                <button class="btn btn--outline btn--sm" onclick="selectAllPending()">Select All</button>
+                                <button class="btn btn--primary btn--sm" onclick="bulkApprove()">Bulk Approve</button>
+                                <button class="btn btn--outline btn--sm" onclick="bulkReject()">Bulk Reject</button>
+                            </div>
+                        </div>
+                        <div class="students-table" id="pendingStudentsTable">
+                            <!-- Pending students will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Approved Students -->
+                    <div id="approvedStudents" class="management-content">
+                        <div class="management-header">
+                            <h3>Approved Students</h3>
+                            <div class="search-box">
+                                <input type="text" id="approvedSearch" class="form-control" placeholder="Search students...">
+                            </div>
+                        </div>
+                        <div class="students-table" id="approvedStudentsTable">
+                            <!-- Approved students will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Rejected Students -->
+                    <div id="rejectedStudents" class="management-content">
+                        <div class="management-header">
+                            <h3>Rejected Applications</h3>
+                        </div>
+                        <div class="students-table" id="rejectedStudentsTable">
+                            <!-- Rejected students will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Management Tab -->
+            <div id="quizzesTab" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3>Quiz Statistics</h3>
+                    <div id="quizStats">
+                        <!-- Quiz statistics will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Detail Modal -->
+    <div id="studentDetailModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Student Details</h3>
+                <button class="close-btn" onclick="closeStudentModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="studentDetailBody">
+                <!-- Student details will be populated by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" onclick="closeStudentModal()">Close</button>
+                <button class="btn btn--primary" id="approveStudentBtn" onclick="approveStudent()">Approve</button>
+                <button class="btn btn--outline" id="rejectStudentBtn" onclick="rejectStudent()">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Questions Preview Modal -->
+    <div id="aiQuestionsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Generated Questions Preview</h3>
+                <button class="close-btn" onclick="closeAIModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="aiQuestionsPreview">
+                <!-- Generated questions will be shown here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" onclick="closeAIModal()">Cancel</button>
+                <button class="btn btn--primary" onclick="addQuestionsToBank()">Add to Quiz Bank</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Confirmation Modal -->
+    <div id="emailModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Email Sent Successfully!</h3>
+                <button class="close-btn" onclick="closeEmailModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>✅ Your quiz results have been sent to your email address.</p>
+                <div id="emailDetails"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--primary" onclick="closeEmailModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" class="message-container hidden">
+        <div id="messageContent" class="message">
+            <!-- Dynamic messages will be shown here -->
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
